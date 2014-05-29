@@ -1,0 +1,25 @@
+{
+    "id" : 3,
+    "name" : "Galaxy",
+    "children" : [
+        {
+            "type" : "content_node",
+            "id"   : 3,
+            "start_time" : null,
+            "end_time" : null,
+            "title" : "Milky Way"
+        },
+        {
+            "type" : "content_node",
+            "id"   : 4,
+            "start_time" : null,
+            "end_time" : null,
+            "title" : "Tilman's Crest"
+        }
+    ],
+    "parent" : null,
+    "owner" : 1,
+    "created_on" : 1401340465,
+    "base_node" : null
+}
+
