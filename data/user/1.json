@@ -1,0 +1,8 @@
+{
+    "id" : 1,
+    "name" : "Micha",
+    "type" : "admin",
+    "user_nodes" : [1],
+    "completed_content" : [],
+    "owned_materials" : []
+}
