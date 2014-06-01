@@ -6,6 +6,15 @@
     font-size: 1.5em;
 }
 
+.card_error {
+    clear: both;
+    padding: 10px;
+    font-weight: bold;
+    background: rgba(10, 10, 10, 0.2);
+    border: 2px solid;
+    color: red;
+}
+
 .card_user_node {
     clear: both;
     padding: 0 10px;

@@ -9,6 +9,8 @@ function _get_card_info(card) {
     var api_url = '/api/v0/getusernodegraph?node_id=' + node_id;
     $.getJSON(api_url, function(data) {
         _fill_card(card_jq, data);
+    }).fail(function() {
+        card_jq.html("<p class='card_error'>Could not find content</p>");
     });
 }
 
@@ -24,6 +26,9 @@ function _fill_card(htmlnode, root) {
         root_div.addClass('card_content_node')
         $.getJSON('/api/v0/getcontentnode?node_id=' + root.id, function(data) {
             content_div.html(content_node_template(data));
+        }).fail(function() {
+            root.description = "";
+            content_div.html(content_node_template(root));
         });
     } else {
         content_div.html(user_node_template(root));
