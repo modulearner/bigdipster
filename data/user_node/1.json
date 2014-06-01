@@ -1,6 +1,6 @@
 {
     "id" : 1,
-    "name" : "9th Grade Science",
+    "title" : "9th Grade Science",
     "children" : [
         {
             "type" : "user_node",
