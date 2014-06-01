@@ -7,6 +7,7 @@ from tornado import ioloop
 from app.usernode import (GetUserNode, GetUserNodeGraph)
 from app.contentnode import GetContentNode
 from app.user import GetUser
+from app.ui import CardView
 
 options.define("port", default=8080, type=int, help="Port to serve on")
 options.define("debug", default=False, type=bool, help="Debug Mode")
@@ -18,12 +19,18 @@ if __name__ == "__main__":
 
     application = web.Application(
         [
+            # API
             ('/api/v0/getusernode'      , GetUserNode      )  , 
             ('/api/v0/getcontentnode'   , GetContentNode   )  , 
             ('/api/v0/getuser'          , GetUser          )  , 
             ('/api/v0/getusernodegraph' , GetUserNodeGraph )  , 
+
+            # Visualizations
+            ('/ui/cardview' , CardView )  , 
         ],
         debug = debug,
+        template_path = './templates/',
+        static_path = './static/',
     )
 
 
