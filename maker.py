@@ -4,7 +4,7 @@ from tornado import web
 from tornado import options
 from tornado import httpserver
 from tornado import ioloop
-from app.usernode import GetUserNode
+from app.usernode import (GetUserNode, GetUserNodeGraph)
 from app.contentnode import GetContentNode
 from app.user import GetUser
 
@@ -18,9 +18,10 @@ if __name__ == "__main__":
 
     application = web.Application(
         [
-            ('/api/v0/getusernode'    , GetUserNode    )  , 
-            ('/api/v0/getcontentnode' , GetContentNode )  , 
-            ('/api/v0/getuser'        , GetUser        )  , 
+            ('/api/v0/getusernode'      , GetUserNode      )  , 
+            ('/api/v0/getcontentnode'   , GetContentNode   )  , 
+            ('/api/v0/getuser'          , GetUser          )  , 
+            ('/api/v0/getusernodegraph' , GetUserNodeGraph )  , 
         ],
         debug = debug,
     )
