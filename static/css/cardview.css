@@ -1,0 +1,52 @@
+.card_user_node_root {
+    width: 500px;
+}
+
+.card_user_node_root > .card_user_node > .card_content {
+    font-size: 1.5em;
+}
+
+.card_user_node {
+    clear: both;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    background: rgba(10, 10, 10, 0.2);
+    border: 2px solid;
+}
+
+.card_content_node {
+    float: left;
+    max-width: 200px;
+    overflow: auto;
+    padding-left: 15px;
+    margin-bottom: 5px;
+}
+
+.card_content_node > .card_content {
+    background: rgba(255, 0, 0, 0.5);
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.card_user_node > .card_content {
+    font-weight: bold;
+    font-size: 1.15em;
+}
+
+.card_content {
+    margin: 5px;
+    padding-bottom: 5px;
+}
+
+.card_content > .title {
+    font-weight: bold;
+}
+
+.card_content > .title:after {
+    content: "; "
+}
+
+.card_content > .description {
+    font-style: italic;
+}
