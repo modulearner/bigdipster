@@ -1,6 +1,6 @@
 {
     "id" : 1,
-    "name" : "Earth",
+    "title" : "Earth",
     "text" : "Earth is big, blue, and mostly harmless.",
     "description" : "All you need to know about earth",
     "creator" : 1,

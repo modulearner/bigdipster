@@ -1,6 +1,6 @@
 {
     "id" : 2,
-    "name" : "Planets",
+    "title" : "Planets",
     "children" : [
         {
             "type" : "content_node",
