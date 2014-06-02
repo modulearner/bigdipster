@@ -8,7 +8,7 @@ from tornado import ioloop
 from app.usernode import (GetUserNode, GetUserNodeGraph)
 from app.contentnode import GetContentNode
 from app.user import GetUser
-from app.ui import CardView
+from app.ui import (CardView, CirclePack)
 
 options.define("port", default=8080, type=int, help="Port to serve on")
 options.define("debug", default=False, type=bool, help="Debug Mode")
@@ -27,7 +27,8 @@ if __name__ == "__main__":
             ('/api/v0/getusernodegraph' , GetUserNodeGraph )  , 
 
             # Visualizations
-            ('/ui/cardview' , CardView )  , 
+            ('/ui/cardview' , CardView )  ,
+            ('/ui/circlepack' , CirclePack ) ,
         ],
         debug = debug,
         template_path = './templates/',
