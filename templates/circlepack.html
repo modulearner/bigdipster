@@ -135,13 +135,7 @@
       .attr("r", function(d) { return k * d.r; });
 
       t.selectAll("text")
-      .attr("x", function(d) { 
-        if (d.children){
-          return x(d.x) - (d.r/1.5);
-        } else {
-        return x(d.x);          
-        }
-      })
+      .attr("x", function(d) { return d.children ? x(d.x - d.r/2) : x(d.x); })
       .attr("y", function(d) { return y(d.y); })
       .style("opacity", function(d) { return k * d.r > 20 ? 1 : 0; });
 
