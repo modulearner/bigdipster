@@ -27,8 +27,8 @@ if __name__ == "__main__":
             ('/api/v0/getusernodegraph' , GetUserNodeGraph )  , 
 
             # Visualizations
-            ('/ui/cardview' , CardView )  ,
-            ('/ui/circlepack' , CirclePack ) ,
+            ('/ui/cardview'   , CardView   )  , 
+            ('/ui/circlepack' , CirclePack )  , 
         ],
         debug = debug,
         template_path = './templates/',
