@@ -1,5 +1,6 @@
 {
     "id" : 2,
+    "type" : "lab",
     "title" : "Rectus 9",
     "text" : "Rectus 9 is a strange dark planet somewhere deep in the core of the sun",
     "description" : "The last planet in the steeple",

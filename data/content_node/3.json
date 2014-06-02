@@ -1,8 +1,9 @@
 {
     "id" : 3,
+    "type" : "activity",
     "title" : "Milky Way",
-    "text" : "The milky way is neither milky nor is it a way to get anywhere.... Discuss.",
     "description" : "The Milky way... it's the place where scientists think we live.",
+    "text" : "The milky way is neither milky nor is it a way to get anywhere.... Discuss.",
     "creator" : 1,
     "knowledge_graph" : {
         "children" : [],

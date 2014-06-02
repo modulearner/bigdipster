@@ -1,13 +1,14 @@
 {
     "id" : 4,
+    "type" : "text",
     "title" : "Tilman's Crest",
     "text" : "No matter how much you study Tilman's Crest, it will still give you goose pimples.",
     "description" : "Tilman's Crest: One of the 5 wonders of the Universe",
     "creator" : 1,
     "knowledge_graph" : {
-        "children" : [],
-        "parents" : [],
-        "siblings" : []
+        "children" : [5],
+        "parents" : [1,2],
+        "siblings" : [3]
     },
     "base_node" : null,
     "grade_level" : 9,

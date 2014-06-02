@@ -12,6 +12,7 @@ for table in os.listdir("./data"):
             continue
         item_id = int(item.split(".")[0]) #dirty but i'm tired
         item_path = os.path.join(table_path, item)
+        print "Loading: ", item_path
         database[item_id] = json.load(open(item_path))
     data[table] = database
 
