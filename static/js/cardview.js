@@ -1,12 +1,17 @@
 var CardView = (function(jQuery, _) {
     var module = {};
 
-    var user_node_template = _.template("<%= title %>");
+    var user_node_template = _.template("<span class='user_title' onClick='CardView.collapse(this);'><%= title %></span>");
     var content_node_template = _.template("<span class='title'><%= title %></span><span class=description><%= description %></span>");
 
     module.init = function() {
         var cardcontainers = jQuery('.card_user_node_root');
         _.each(cardcontainers, module.init_card);
+    }
+
+    module.collapse = function(obj) {
+        var block = jQuery(obj).parent().parent();
+        block.toggleClass("card_hide");
     }
     
     module.init_card = function(card) {

@@ -1,9 +1,18 @@
 .card_user_node_root {
-    width: 750px;
+    display: inline-block;
+    max-width: 750px;
 }
 
 .card_user_node_root > .card_user_node > .card_content {
     font-size: 1.5em;
+}
+
+.card_hide > *:not(:first-child) {
+    display: none;
+}
+
+.card_hide > *:first-child:after {
+    content: "...";
 }
 
 .card_error {
@@ -18,22 +27,27 @@
 .card_user_node {
     clear: both;
     padding: 0 10px;
-    margin-bottom: 10px;
     background: rgba(10, 10, 10, 0.2);
     border: 2px solid;
+    margin-bottom: 5px;
+}
+
+.card_user_node:not(:only-child) {
+    margin-bottom: 10px;
 }
 
 .card_content_node {
     float: left;
-    width: 200px;
-    min-height: 100px;
-    max-height: 500px;
-    overflow: auto;
     padding-left: 15px;
     margin-bottom: 5px;
 }
 
 .card_content_node > .card_content {
+    width: 200px;
+    height: 75px;
+
+    overflow: auto;
+
     background: rgba(255, 0, 0, 0.5);
     border: 2px solid;
     border-radius: 5px;
