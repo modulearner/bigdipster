@@ -9,6 +9,7 @@ class GetUserNode(BaseHandler):
         data = database.get("user_node", node_id)
         self.api_response(data)
 
+
 class GetUserNodeGraph(BaseHandler):
     def get(self):
         node_id = self.get_int_argument("node_id")
@@ -29,5 +30,3 @@ def extract_full_graph(data, max_depth):
             else:
                 child["children"] = []
     return data
-
-
