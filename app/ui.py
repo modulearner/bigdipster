@@ -7,6 +7,10 @@ class CardView(BaseHandler):
         self.render("card_view.html")
 
 class CirclePack(BaseHandler):
-	def get(self):
-		self.render("circlepack.html")
+    def get(self):
+        self.render("circlepack.html")
+
+class TextbookView(BaseHandler):
+    def get(self):
+        self.render("textbook_view.html")
 
