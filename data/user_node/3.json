@@ -15,6 +15,13 @@
             "start_time" : null,
             "end_time" : null,
             "title" : "Tilman's Crest"
+        },
+        {
+            "type" : "content_node",
+            "id"   : 5,
+            "start_time" : null,
+            "end_time" : null,
+            "title" : "Chlorophyll Extraction Experiment"
         }
     ],
     "parent" : null,
