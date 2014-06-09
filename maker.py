@@ -5,6 +5,7 @@ from tornado import options
 from tornado import httpserver
 from tornado import ioloop
 
+<<<<<<< HEAD
 from app.usernode import (GetUserNode, GetUserNodeGraph)
 from app.contentnode import GetContentNode
 from app.user import GetUser
@@ -21,10 +22,10 @@ if __name__ == "__main__":
     application = web.Application(
         [
             # API
-            ('/api/v0/getusernode'      , GetUserNode      )  , 
-            ('/api/v0/getcontentnode'   , GetContentNode   )  , 
-            ('/api/v0/getuser'          , GetUser          )  , 
-            ('/api/v0/getusernodegraph' , GetUserNodeGraph )  , 
+            ('/api/v0/usernode'      , UserNode      )  , 
+            ('/api/v0/contentnode'   , ContentNode   )  , 
+            ('/api/v0/user'          , User          )  , 
+            ('/api/v0/usernodegraph' , UserNodeGraph )  , 
 
             # Visualizations
             ('/ui/cardview'   , CardView   )  , 
