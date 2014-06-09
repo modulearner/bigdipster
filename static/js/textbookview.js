@@ -50,7 +50,7 @@ var TextbookView = (function(jQuery, d3, markdown, _) {
     }
 
     function _uid(d,i) {
-        return "section_" + d.title.replace(" ", '') + i;
+        return "section_" + d.title.replace(/[^a-zA-Z]/g, '') + i;
     }
 
     function _fill_graph(div, data) {
@@ -66,7 +66,7 @@ var TextbookView = (function(jQuery, d3, markdown, _) {
         var node = svg.selectAll(".node")
             .data(graph.nodes)
           .enter().append("circle")
-            .attr("class", function(d,i) { return "node " + _uid(d,i); })
+            .attr("class", "node")//function(d,i) { return "node " + _uid(d,i); })
             .attr("r", 25)
             .attr("cx", width/2)
             .attr("cy", function(d,i) { return height * d.y; });
@@ -89,13 +89,41 @@ var TextbookView = (function(jQuery, d3, markdown, _) {
     }
 
     function _magnify_graph(div, event) {
-        foo = event;
-        var factor = $(document).scrollTop() / $(document).height();
-        d3.selectAll(div).selectAll(".node")
+        var scrollTop = $(window).scrollTop() + 25,
+            windowHeight = $(window).height() - 50,
+            docHeight = $(document).height() - 50;
+        
+        var elements = d3.selectAll(div).selectAll(".node");
+        var numElements = elements[0].length;
+
+        elements
             .attr("r", function(d,i) { 
-                return 25 / (8 * Math.pow(factor - d.y, 2) + 1);
+                var uid = _uid(d, i);
+                var element = $("." + uid);
+                var etop = element.offset().top;
+                var ebottom = element.height() + etop;
+
+                var factor;
+                if (ebottom < scrollTop + 5*numElements) {
+                    factor = Math.pow(ebottom/scrollTop, 2) / 2;
+                } else if (etop > scrollTop + windowHeight - 5*numElements) {
+                    factor = Math.pow((etop-docHeight)/(windowHeight-docHeight),2) / 2;
+                } else {
+                    console.log(uid);
+                    factor = 1.0;
+                }
+                return 25 * factor;
+            })
+            .attr("cy", function(d,i) {
+                var uid = _uid(d, i);
+                var element = $("." + uid);
+                var etop = element.offset().top;
+
+                console.log(elements);
+                var y = Math.min(Math.max(etop - scrollTop, 5 + 10*i), windowHeight - 5 - 10*(numElements - i));
+
+                return y;
             });
-    
     }
 
     function _fill_text(div, data, level, num_children) {
@@ -111,13 +139,13 @@ var TextbookView = (function(jQuery, d3, markdown, _) {
                 var html = markdown.toHTML(mdtree);
                 content.html(html);
             })
-            return true;
+            return num_children + 1;
         }
 
         for (var i in data.children) {
-            var is_child = _fill_text(div, data.children[i], level+1, num_children);
-            num_children += is_child;
+            num_children = _fill_text(div, data.children[i], level+1, num_children);
         }
+        return num_children;
     }
 
     function _reformat_markdown_headings(mdtree, level) {

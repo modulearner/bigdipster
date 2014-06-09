@@ -1,7 +1,9 @@
 #!/usr/bin/env python3.4
 
+import lib
 import ujson as json
 import os
+import copy
 
 data = {}
 for table in os.listdir("./data"):
@@ -18,9 +20,23 @@ for table in os.listdir("./data"):
 class ItemNotFound(Exception):
     pass
 
+STANDARDS = {"science" : "science"}
+
+def save(table, item_id, data, require_all_fields=True):
+    errors = lib.schema.VERIFY[table](data, require_all_fields)
+    if errors is not None:
+        return errors
+    data[table][item_id] = data
+    json.dump(data, open("./data/{}/{}.json".format(table, item_id), "w+"))
+
 def get(table, item_id):
     try:
-        return data[table][item_id]
+        return copy.deepcopy(data[table][item_id])
     except KeyError:
         raise ItemNotFound
 
+def exists(table, item_id):
+    try:
+        return item_id in data[table]
+    except KeyError:
+        return False
