@@ -12,9 +12,8 @@ class ContentNode(BaseHandler):
         self.api_response(data)
 
     def put(self):
-        node_id = self.get_int_argument("id")
-        data_raw = self.get_argument("data")
-        data = json.loads(data_raw)
+        data = json.loads(self.request.body)
+        node_id = data['id']
 
         errors = database.save("content_node", node_id, data)
         self.api_response({"errors" : errors})
