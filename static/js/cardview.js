@@ -17,7 +17,7 @@ var CardView = (function(jQuery, _) {
     module.init_card = function(card) {
         var card_jq = jQuery(card);
         var node_id = card_jq.attr('nodeid');
-        var api_url = '/api/v0/getusernodegraph?node_id=' + node_id;
+        var api_url = '/api/v0/usernodegraph?node_id=' + node_id;
         jQuery.getJSON(api_url, function(data) {
             _fill_card(card_jq, data);
         }).fail(function() {
@@ -34,7 +34,7 @@ var CardView = (function(jQuery, _) {
             root_div.addClass('card_content_node')
             root.description = "";
             content_div.html(content_node_template(root));
-            jQuery.getJSON('/api/v0/getcontentnode?node_id=' + root.id, function(data) {
+            jQuery.getJSON('/api/v0/contentnode?node_id=' + root.id, function(data) {
                 content_div.html(content_node_template(data));
             })
         } else {
