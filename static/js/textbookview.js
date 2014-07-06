@@ -126,9 +126,11 @@ var TextbookView = (function(jQuery, d3, markdown, _) {
             });
     }
 
-    function _fill_text(div, data, level, num_children) {
+    function _fill_text(div, data, level, num_content) {
         var level = level || 1;
-        var num_children = num_children || 0;
+        // The first node passed will always be a user node since content nodes will always be wrapped by at least one user node
+        // Thus, it's fine to assume that num_content will be incremented before finding a content node
+        var num_content = num_content || 0;
         jQuery("<h" + level + "/>").html(data.title).appendTo(div);
 
         if (data.type == 'content_node') {
@@ -139,11 +141,12 @@ var TextbookView = (function(jQuery, d3, markdown, _) {
                 var html = markdown.toHTML(mdtree);
                 content.html(html);
             })
-            return num_children + 1;
-        }
-
-        for (var i in data.children) {
-            num_children = _fill_text(div, data.children[i], level+1, num_children);
+            return true;
+        } else {
+            for (var i in data.children) {
+                var is_child = _fill_text(div, data.children[i], level+1, num_content);
+                num_content += is_child;
+            }
         }
         return num_children;
     }

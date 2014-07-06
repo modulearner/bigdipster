@@ -14,3 +14,7 @@ class TextbookView(BaseHandler):
     def get(self):
         self.render("textbook_view.html")
 
+class EditContent(BaseHandler):
+	def get(self):
+		self.render("edit_view.html")
+
