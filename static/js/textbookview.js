@@ -9,7 +9,7 @@ var TextbookView = (function(jQuery, d3, markdown, _) {
     module.init_book = function(book) {
         var book_jq = jQuery(book);
         var node_id = book_jq.attr('nodeid');
-        var api_url = '/api/v0/getusernodegraph?node_id=' + node_id;
+        var api_url = '/api/v0/usernodegraph?node_id=' + node_id;
         jQuery.getJSON(api_url, function(data) {
             var graph = jQuery("<div/>").addClass("text_graph").appendTo(book);
             var text = jQuery("<div/>").addClass("text_text").appendTo(book);
@@ -135,7 +135,7 @@ var TextbookView = (function(jQuery, d3, markdown, _) {
 
         if (data.type == 'content_node') {
             var content = jQuery("<div/>").addClass("markdown").addClass(_uid(data, num_content)).appendTo(div);
-            jQuery.getJSON('/api/v0/getcontentnode?node_id=' + data.id, function(data) { 
+            jQuery.getJSON('/api/v0/contentnode?node_id=' + data.id, function(data) { 
                 var mdtree = _reformat_markdown_headings(markdown.parse(data.text), level);
                 //var html = markdown.renderJsonML(markdown.toHTMLTree(mdtree));
                 var html = markdown.toHTML(mdtree);
