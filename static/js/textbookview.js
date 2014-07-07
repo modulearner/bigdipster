@@ -134,7 +134,7 @@ var TextbookView = (function(jQuery, d3, markdown, _) {
         jQuery("<h" + level + "/>").html(data.title).appendTo(div);
 
         if (data.type == 'content_node') {
-            var content = jQuery("<div/>").addClass("markdown").addClass(_uid(data, num_content)).appendTo(div);
+            var content = jQuery("<div/>").addClass("markdown").addClass(_uid(data, num_children)).appendTo(div);
             jQuery.getJSON('/api/v0/contentnode?node_id=' + data.id, function(data) { 
                 var mdtree = _reformat_markdown_headings(markdown.parse(data.text), level);
                 //var html = markdown.renderJsonML(markdown.toHTMLTree(mdtree));
