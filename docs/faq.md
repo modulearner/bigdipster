@@ -41,7 +41,7 @@ creation and discovery in the process of performing the lesson. We believe that 
 agency is paramount in a students' interest in science. A space to explore and make one's own
 decisions will encourage even the more hesitant students.
 
-## 5) Will these exercises conform to the standards of Common Core?
+## 5) Will these exercises conform to the standards of Common Core and the Next Generation Science Standards?
 No idea.  Probably?  Look science is science, fuck the common core.  lorem ipsum lorem ispsum to be
 continued.
 
