@@ -43,7 +43,7 @@ decisions will encourage even the more hesitant students.
 
 ## 5) Will these exercises conform to the standards of Common Core and the Next Generation Science Standards?
 No idea.  Probably?  Look science is science, fuck the common core.  lorem ipsum lorem ispsum to be
-continued.
+continued.  [NGSS is probably more applicable at first since common core is just literacy and math]
 
 ## 6) Can curricular material be downloaded/uploaded from/to this website?
 Not sure what features the website will have yet but yeah, eventually it'd be nice if teachers could
@@ -53,3 +53,9 @@ uplaod specific handouts they designed for each module and it might be nice if w
 At the moment this website has no external affiliation.  The modules are written by a handful of
 eager young expositors of science, and the design of the website itself is done pro bono by coders
 with similar interests in science and pedagogy.
+
+## 8) Who creates the curriculum?  Is it trustworthy?
+
+
+## 9) What is the maker/DIY movement and how is this curriculum related to that?
+
