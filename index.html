@@ -124,14 +124,19 @@
 
             .navigation > li {
                 position: absolute;
-                transition: all 5s;
+                transition: all 0.5s;
                 top: 0px;
                 left: 0px;
                 color: white;
             }
 
+            .navigation {
+                opacity: 1;
+                transition: all 0.5s;
+            }
+
             .navigation.hidden {
-                display: none;
+                opacity: 0;
                 visibility: hidden;
             }
 
