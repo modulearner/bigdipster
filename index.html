@@ -1,5 +1,4 @@
-<html>
-    <head>
+<html> <head>
         <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,700italic' rel='stylesheet' type='text/css'>
         <style>
@@ -8,6 +7,9 @@
                 height: 100%;
                 margin: 0;
                 padding: 0;
+                /* this corrects for a ball that goes off
+                the right side of the page */
+                overflow-x: hidden;
 
                 background-image: url('images/Possibly_an_arithmatic_problem_on_blackboard_in_schoolroom.small.jpg');
                 background-repeat:no-repeat;
@@ -66,7 +68,7 @@
                 padding-bottom: 5%;
             }
 
-            ol {
+            .faq {
                 background-color: #F4F4F4;
                 padding: 0 15%;
                 margin: 0;
@@ -74,20 +76,80 @@
                 list-style: None;
             }
 
-            ol>li:nth-child(odd) {
+            .faq>li:nth-child(odd) {
                 text-indent: -4%;
                 font-size: 28pt;
                 font-weight: 700;
             }
-            ol>li:nth-child(even) {
+            .faq>li:nth-child(even) {
                 text-indent: 2%;
                 padding-bottom: 4%;
+            }
+
+            .hovertrap {
+                transition: all 0.5s;
+                position: absolute;
+                top: -150px;
+                right: -150px;
+                width: 300px;
+                height: 300px;
+                border-radius: 150px;
+            }
+
+            .ball {
+                transition: all 0.5s;
+                font-family: 'Patua One', cursive;
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border-radius: 50px;
+                background-color: blue;
+                right: 50%;
+                top: 50%;
+                margin-top: -50px;
+                margin-right: -50px;
+                line-height: 100px;
+                text-align: center;
+                font-size: 25pt;
+            }
+
+            .hovertrap:hover {
+                right: -450px;
+                top: -450px;
+                border-radius: 500px;
+                width: 1000px;
+                height: 1000px;
+            }
+
+            .navigation > li {
+                position: absolute;
+                transition: all 5s;
+                top: 0px;
+                left: 0px;
+                color: white;
+            }
+
+            .navigation.hidden {
+                display: none;
+                visibility: hidden;
             }
 
 
         </style>
     </head>
     <body>
+
+        <div class="hovertrap">
+            <div class="ball">
+                    M
+                    <ol class="navigation hidden">
+                        <li>About</li>
+                        <li>FAQ</li>
+                        <li>Contact</li>
+                    </ol>
+            </div>
+        </div>
+
         <h1>makeroama</h1>
 
         <h2>about</h2>
@@ -108,7 +170,7 @@
         <pre>"Inspirational Quote"</pre>
 
         <h2>faq</h2>
-        <ol>
+        <ol class="faq">
             <li>Are you a computer?</li>
             <li>No, I am not infact a computer.  This is a common question, however, since I am on a computer right now.  Infact, I remember last week while eating a steak sandwich, someone asking me whether I was a steak sandwich.  This is exactly the same mistake you just made.</li>
             <li>Are you a computer?</li>
@@ -116,5 +178,40 @@
             <li>Are you a computer?</li>
             <li>No, I am not infact a computer.  This is a common question, however, since I am on a computer right now.  Infact, I remember last week while eating a steak sandwich, someone asking me whether I was a steak sandwich.  This is exactly the same mistake you just made.</li>
         </ol>
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script>
+          var $navigation = $('.navigation');
+          var $children = $navigation.children();
+          var count = $children.length;
+          var angle = (Math.PI / 3) / count;
+          $('.hovertrap').hover(function() {
+              $navigation.removeClass('hidden');
+              $('.ball').css({
+                  'border-left': '350px transparent',
+                  'border-bottom': '350px transparent'
+              });
+              $children.each(function(i) {
+                var $this = $(this);
+                var localangle = angle * (i);
+                var sin = 325 * Math.sin(localangle);
+                var cos = 325 * Math.cos(localangle);
+                $this.css({
+                    "top": sin,
+                    "left": -cos,
+                    "transform": 'rotate(-' + localangle + 'rad)'
+                });
+              });
+          }, function() {
+              $navigation.addClass('hidden');
+              $children.each(function(i) {
+                var $this = $(this);
+                $this.css({
+                    "top": 0,
+                    "left": 0,
+                });
+              });
+            
+          });
+        </script>
     </body>
 </html>
