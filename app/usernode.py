@@ -14,7 +14,6 @@ class UserNodeGraph(BaseHandler):
     def get(self):
         node_id = self.get_int_argument("node_id")
         max_depth = self.get_int_argument("max_depth", 4)
-        print max_depth
         data = db.get("user_node", node_id)
         data = extract_full_graph(data, max_depth-1)
         self.api_response(data)

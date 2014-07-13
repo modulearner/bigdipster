@@ -5,10 +5,9 @@ from tornado import options
 from tornado import httpserver
 from tornado import ioloop
 
-<<<<<<< HEAD
-from app.usernode import (GetUserNode, GetUserNodeGraph)
-from app.contentnode import GetContentNode
-from app.user import GetUser
+from app.usernode import (UserNode, UserNodeGraph)
+from app.contentnode import ContentNode
+from app.user import User
 from app.ui import (CardView, CirclePack, TextbookView, EditContent)
 
 options.define("port", default=8080, type=int, help="Port to serve on")
