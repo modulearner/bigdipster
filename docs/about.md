@@ -2,7 +2,7 @@
 
 ##The Curriculum
 
-The goal of this project is to offer a (free)<-"redundant?" science curriculum that is free for any and all educators, and is based in a practice of *doing* science hands-on.  Curricular materials will be written by contributors across the domains of science and education.  While material can be written by anyone (i.e. content will eventually be crowd sourced), we will always keep an up-to-date curated curriculum that highlights content that has been verified as both scientifically correct and classroom appropriate. 
+The goal of this project is to offer a science curriculum that is free for any and all educators, and is based in a practice of *doing* science hands-on.  Curricular materials will be written by contributors across the domains of science and education.  While material can be written by anyone (i.e. content will eventually be crowd sourced), we will always keep an up-to-date curated curriculum that highlights content that has been verified as both scientifically correct and classroom appropriate. 
 
  In writing and verifying curricular materials, we espouse the philosophies of Experiential Education, Democratic Education, and Maker/DIY Constructionism.  We believe in the classroom as an enriching environment where kids take on authentic roles in the process of doing and learning science.  Further, we do not see *fundamental* divides between scientific disciplines nor do we see any reason to sever science off from other subjects, such as the teaching of art or history.  With this in mind, we hope to create and support the creation of curricula that has a multi-modal and cross-disciplinary appeal for students and teachers.  <-"very buzzwordy paragraph.  sounds nice as an academic but are we writing this for teachers or for a grant app reviewing comittee?  or should i give teachers more credit with respect to phil of ed lingo?"
 
@@ -37,7 +37,7 @@ Collective Laboratories is a group of educators, scientists, coders, and caring 
 Currently, most of our contributors are based in Boulder, Colorado and Brooklyn, New York.  If you want to learn more about the individuals behind Collective Laboratories go to our Personnel Page.  [Should we create one of these as well and have 1 paragraph bios on there?]<-"sure, i'm board for that"
 
 ##Our Plan for the Future of This Project
-While we are currently working on phase 1 of this project, which involves delivering a curriculum and a working web resource, we do hope to fill more needs of schools in teachers in the future<-"awkward claus, consider rewording".  Including, but not limited to:  
+While we are currently working on phase 1 of this project, which involves delivering a curriculum and a working web resource, we do hope to fill more needs of schools and teachers in the future.  Including, but not limited to:  
 + **Educational Kits** that provide your classroom with the materials needed to complete many of our posted activities and labs.  
 + **Printing service** for teachers who do not have the computer resources to make the online version of this curriculum a systematic option for their classes.  
 + **Data analysis and content suggestions** based on the information we gather from your classroom practices, your students' performance and feedback, and other teachers' data.  This will allow us to participate in the effort to determine what works and what does not work in schools, and help teachers get in better resonance with their students' needs.  
