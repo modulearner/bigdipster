@@ -2,7 +2,7 @@
 
 ##The Curriculum
 
-The goal of this project is to offer a free science curriculum that is free for any and all educators, and is based in a practice of *doing* science hands-on.  Curricular materials will be written by contributors across the domains of science and education.  While material can be written by anyone (i.e., content will eventually be crowd sourced), we will always keep an up-to-date curated curriculum that highlights content that has been verified as both scientifically correct and classroom appropriate. 
+The goal of this project is to offer a (free)<-"redundant?" science curriculum that is free for any and all educators, and is based in a practice of *doing* science hands-on.  Curricular materials will be written by contributors across the domains of science and education.  While material can be written by anyone (i.e., content will eventually be crowd sourced), we will always keep an up-to-date curated curriculum that highlights content that has been verified as both scientifically correct and classroom appropriate. 
 
  In writing and verifying curricular materials, we espouse the philosophies of Experiential Education, Democratic Education, and Maker/DIY Constructionism.  We believe in the classroom as an enriching environment where kids take on authentic roles in the process of doing and learning science.  Further, we do not see *fundamental* divides between scientific disciplines nor do we see any reason to sever science off from other subjects, such as the teaching of art or history.  With this in mind, we hope to create and support the creation of curricula that has a multi-modal and cross-disciplinary appeal for students and teachers.  
 
