@@ -15,7 +15,7 @@ Being a curriculum that is entirely free, we strive to remove the burden on teac
 ###Organizing Your Curriculum
 Our website will offer many different tools to help you design and organize the content and flow of your curriculum.  We will provide users with various interfaces such as graphs, digital notecards, and customized textbooks to view, build, and reorganize your curriculum.  Since we recognize that we do not know what is best for every teacher, we offer different interfaces and strategies to provide options to the user based on what she/he finds most intuitive.
 
-[Should add a few graphics of the views we've rendered so far perhaps?]
+[Should add a few graphics of the views we've rendered so far perhaps?]<-"are the views rendered so far somewhat final or will they be changed quite a bit in appearance?"
 
 ###Student Feedback
 In line with our democratic view of education, we hope to see teachers publish their curriculum ahead of time for their students to view.  This allows students to both make suggestions to upcoming curricular modules and provide feedback for past modules that have already been taught.  Even though the curriculum is free and open to the public, students can be assigned, privately, to classrooms and give feedback that goes exclusively to their teacher, allowing teachers to be responsive to the needs of their students.  
