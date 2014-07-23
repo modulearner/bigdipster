@@ -18,7 +18,7 @@ website?](#7-what-are-the-affiliations-of-this-website)
 Yes! EduWeb is a completely free, open source platform, in order to involve as many teachers and
 classrooms as possible. We believe STEM education shouldn't be confined to those with more financial
 opportunity.  Our goal is to give teachers the ability to spend less money on textbooks and more on 
-buildingan enriching learning environment.
+building an enriching learning environment.
 
 ## 2) What makes this different from traditional textbooks?
 EduWeb is unique in its modular structure.  What we mean by this, is that individual lessons, called
@@ -81,6 +81,6 @@ subject-matter experts.  While we will do our best to always be up-to-date and e
 
 ## 9) What is the maker/DIY movement and how is this curriculum related to that?
 The Maker/DIY movement is the current iteration of a long history of people designing, testing, inventing, 
-experimenting, building, etc, outside of traditional institutions of manufacturing and research.  Nowadays, the expansion of technologies has allowed much of what is done inside a lab or industrial site to be performed at a smaller scale and cheaper cost within the confines of your own home (or classroom!).  The growth in availabilty and simplicity of these components along with the help of the internet has brought about a larger sharing culture than has ever been known, allowign people to learn, repeat and modify one another's work at no cost.
+experimenting, building, etc, outside of traditional institutions of manufacturing and research.  Nowadays, the expansion of technologies has allowed much of what is done inside a lab or industrial site to be performed at a smaller scale and cheaper cost within the confines of your own home (or classroom!).  The growth in availabilty and simplicity of these components along with the help of the internet has brought about a larger sharing culture than has ever been known, allowing people to learn, repeat and modify one another's work at no cost.
 
 This movement coincides well with learning science as it opens up the flood gates to projects and interactions that accomodate almost any interest while actually *doing* real science and engineering.  We hope to take advantage of these resources both in terms of content and materials.
