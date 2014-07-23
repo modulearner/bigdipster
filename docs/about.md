@@ -34,7 +34,7 @@ Any and all content that is posted on our website is open for users to edit and 
 ##Our Organization
 Collective Laboratories is a group of educators, scientists, coders, and caring citizens who tries to join our skills and efforts to complete projects in the public interest.  We should emphasize the word *collective* in our organization title as we are not exclusive, and thus feel anyone with the desire to contribute toward these same projects and goals is not only included as part of our effort, but will receive credit for their contribution.
 
-Currently, most of our contributors are based in Boulder, Colorado and Brooklyn, New York.  If you want to learn more about the individuals behind Collective Laboratories go to our Personnel Page.  [Should we create one of these as well and have 1 paragraph bios on there?]<-"sure, i'm board for that"
+Currently, most of our contributors are based in Boulder, Colorado and Brooklyn, New York.  If you want to learn more about the individuals behind Collective Laboratories go to our Personnel Page.  [Should we create one of these as well and have 1 paragraph bios on there?]<-"sure, i'm board for that" >> Isn't our name just CoLab?  
 
 ##Our Plan for the Future of This Project
 While we are currently working on phase 1 of this project, which involves delivering a curriculum and a working web resource, we do hope to fill more needs of schools and teachers in the future.  Including, but not limited to:  
