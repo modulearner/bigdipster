@@ -9,9 +9,11 @@ from app.usernode import (UserNode, UserNodeGraph)
 from app.contentnode import ContentNode
 from app.user import User
 from app.ui import (CardView, CirclePack, TextbookView, EditContent)
+import lib.database
 
 options.define("port", default=8080, type=int, help="Port to serve on")
 options.define("debug", default=False, type=bool, help="Debug Mode")
+options.define("backend", default='disk', type=str, help="Database backend to use")
 
 if __name__ == "__main__":
     options.parse_command_line()
@@ -36,6 +38,9 @@ if __name__ == "__main__":
         template_path = './templates/',
         static_path = './static/',
     )
+
+    print "Using database: ", options.options.backend
+    lib.database.init_backend(options.options.backend)
 
 
     server = httpserver.HTTPServer(application)

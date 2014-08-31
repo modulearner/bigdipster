@@ -1,42 +1,43 @@
 #!/usr/bin/env python3.4
 
 import lib
-import ujson as json
-import os
-import copy
-
-data = {}
-for table in os.listdir("./data"):
-    database = {}
-    table_path = os.path.join("./data", table)
-    for item in os.listdir(table_path):
-        if not item.endswith(".json"):
-            continue
-        item_id = int(item.split(".")[0]) #dirty but i'm tired
-        item_path = os.path.join(table_path, item)
-        database[item_id] = json.load(open(item_path))
-    data[table] = database
+from lib import databases
 
 class ItemNotFound(Exception):
-    pass
+    def __init__(self, node_id):
+        self.node_id = node_id
 
 STANDARDS = {"science" : "science"}
 
-def save(table, item_id, data, require_all_fields=True):
-    errors = lib.schema.VERIFY[table](data, require_all_fields)
-    if errors is not None:
-        return errors
-    data[table][item_id] = data
-    json.dump(data, open("./data/{}/{}.json".format(table, item_id), "w+"))
+_BACKEND = None
+def init_backend(backend):
+    global _BACKEND
+    try:
+        _BACKEND = getattr(databases, backend)
+        _BACKEND.init()
+    except AttributeError:
+        raise Exception("Could not find backend: {}".format(backend))
+
+
+def save(table, data, require_all_fields=True, overwrite_id=False):
+    if lib.schema.VERIFY[table](data, require_all_fields):
+        return _BACKEND.save(table, data, require_all_fields, overwrite_id)
+    return None
+
+def update(table, item_id, data, require_all_fields=True):
+    if lib.schema.VERIFY[table](data, require_all_fields):
+        _BACKEND.update(table, item_id, data, require_all_fields)
+        return True
+    return False
 
 def get(table, item_id):
     try:
-        return copy.deepcopy(data[table][item_id])
+        return _BACKEND.get(table, item_id)
     except KeyError:
         raise ItemNotFound
 
 def exists(table, item_id):
     try:
-        return item_id in data[table]
+        return _BACKEND.exists(table, item_id)
     except KeyError:
         return False

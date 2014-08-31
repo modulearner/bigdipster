@@ -2,8 +2,8 @@
 
 from lib.basehandler import BaseHandler
 from lib import database
+from lib import InvalidInput
 
-import ujson as json
 
 class ContentNode(BaseHandler):
     def get(self):
@@ -12,8 +12,23 @@ class ContentNode(BaseHandler):
         self.api_response(data)
 
     def put(self):
-        data = json.loads(self.request.body)
-        node_id = data['id']
+        data = self.get_all_arguments()
+        # Now for some parsing!
+        data['standards'] = [item.strip() for item in data['standards'].split(',')]
 
-        errors = database.save("content_node", node_id, data)
-        self.api_response({"errors" : errors})
+        try:
+            node_id = database.save(
+                "content_node", 
+                data, 
+                require_all_fields = False,
+                overwrite_id = True
+            )
+            return self.api_response({
+                "node_id" : node_id,
+                "errors" : None,
+            })
+        except InvalidInput as error:
+            return self.api_response({
+                "node_id" : None,
+                "errors" : error.errors_by_field,
+            })

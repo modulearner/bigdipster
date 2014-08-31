@@ -27,3 +27,10 @@ class BaseHandler(web.RequestHandler):
         self.set_status(code, reason)
         self.finish()
 
+    def get_all_arguments(self):
+        data = self.request.arguments
+        for k, v in data.iteritems():
+            if len(v) == 1:
+                data[k] = v[0]
+        return data
+
