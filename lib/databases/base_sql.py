@@ -1,6 +1,5 @@
 import sqlalchemy
 from sqlalchemy import Column, Integer, Text, String, Enum, DateTime, ForeignKey, relationship
-from sqlalchemy.dialects import ARRAY
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -29,6 +28,7 @@ class UserNode(Base):
     parent = Column(Integer, ForeignKey('id'))
     owner = Column(Integer, ForeignKey("users.id"))
     created_on = Column(DateTime)
+    last_modified = Column(DateTime)
     base_node = Column(Integer, ForeignKey("id"))
     children = relationship("UserNodeChild", backref='usernode')
 
@@ -39,25 +39,44 @@ class User(Base):
     type = Column(Enum(['admin', 'teacher', 'student']))
     user_nodes = relationship("UserNode")
     completed_content = relationship("ContentNode")
-    #owned_material = ...
+    owned_material = relationship("Material")
 
 class ContentNode(Base):
     __tablename__ = "contentnode"
     id = Column(Integer, primary_key=True)
     title = Column(String(512))
     description = Column(Text)
+    created_on = Column(DateTime)
+    last_modified = Column(DateTime)
     creator = Column(ForeignKey('user.id'))
     knowledge_graph = None
     base_node = Column(ForeignKey('id'))
     grade_level = Column(Integer)
     recommended_time = Column(Integer)
-    #materials = ...
-    standards = Column(ARRAY(String))
+    materials = relationship("Material", backref='contentnode')
+    standards = relationship("Standard")
+    
+class Standard(Base):
+    __tablename__ = 'standards'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(64))
+    description = Column(Text)
+    grade = Column(Integer)
+
+class Material(Base):
+    id = Column(Integer, primary_key=True)
+    name = Column(String(64))
+    description = Column(Text)
+    url = Column(Text)
+    related_material = relationship("Material")
+
 
 _class_lookup = {
     "usernode" : UserNode,
     "user" : User,
     "contentnode" : ContentNode,
+    "standard" : Standard,
+    "material" : Material,
 }
 
 # TODO: write save/update/get/exists for base_sql
