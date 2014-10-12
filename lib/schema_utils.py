@@ -88,14 +88,12 @@ def check_data(data, fields, require_all_fields=True):
 
 user_node_child_fields = {
     "type" : (is_in_list(["user_node", "content_node"]),),
-    "id" : (schema_or(is_user_node, is_content_node),),
     "start_time" : (schema_or(is_none, is_in_range(0)),),
     "end_time" : (schema_or(is_none, is_in_range(0)),),
     "title" : (is_string, ),
 }
 
 user_node_fields = {
-    "id" : (is_int, ),
     "title" : (is_string, ),
     "parent" : (schema_or(is_none, is_user_node), ),
     "owner" : (is_user, ),
@@ -105,7 +103,6 @@ user_node_fields = {
 }
 
 user_fields = {
-    "id" : (is_int, ),
     "name" : (is_string, ),
     "type" : (is_in_list(['admin', 'teacher', 'student']), ),
     "user_nodes" : (is_list, schema_list_check(is_user_node)),
@@ -114,7 +111,6 @@ user_fields = {
 }
 
 content_node_fields = {
-    'id' : (is_int, ),
     'title' : (is_string, ),
     'text' : (is_string, ),
     'description' : (is_string, ),
