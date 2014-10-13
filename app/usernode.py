@@ -5,14 +5,14 @@ from lib.basehandler import BaseHandler
 
 class UserNode(BaseHandler):
     def get(self):
-        node_id = self.get_int_argument("node_id")
+        node_id = self.get_argument("node_id")
         data = db.get("user_node", node_id)
         self.api_response(data)
 
 
 class UserNodeGraph(BaseHandler):
     def get(self):
-        node_id = self.get_int_argument("node_id")
+        node_id = self.get_argument("node_id")
         max_depth = self.get_int_argument("max_depth", 4)
         data = db.get("user_node", node_id)
         data = extract_full_graph(data, max_depth-1)

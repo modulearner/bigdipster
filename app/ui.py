@@ -12,7 +12,8 @@ class CirclePack(BaseHandler):
 
 class TextbookView(BaseHandler):
     def get(self):
-        self.render("textbook_view.html")
+        node_id = self.get_argument("node_id")
+        self.render("textbook_view.html", node_id = node_id)
 
 class EditContent(BaseHandler):
     def get(self):

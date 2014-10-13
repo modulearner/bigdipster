@@ -7,7 +7,7 @@ from lib import InvalidInput
 
 class ContentNode(BaseHandler):
     def get(self):
-        node_id = self.get_int_argument("node_id")
+        node_id = self.get_argument("node_id")
         data = database.get("content_node", node_id)
         self.api_response(data)
 
